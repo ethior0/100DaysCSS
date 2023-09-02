@@ -1,0 +1,368 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  font-family: "Open Sans", sans-serif;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: linear-gradient(0deg, hsl(167, 49%, 45%), hsl(174, 71%, 46%));
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.center .quadro {
+  position: relative;
+  width: 280px;
+  height: 210px;
+  border-radius: 3px;
+  background-color: #f6f6f6;
+  box-shadow: 10px 15px 15px 0 rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+.center .quadro .dado {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 280px;
+  height: 60px;
+  background-color: hsl(39, 73%, 66%);
+}
+.center .quadro .dado .info1, .center .quadro .dado .info2 {
+  color: #fff;
+}
+.center .quadro .dado .info1 {
+  margin-left: 12px;
+}
+.center .quadro .dado .info1 h1 {
+  font-size: 0.9rem;
+}
+.center .quadro .dado .info1 p {
+  font-size: 0.7rem;
+}
+.center .quadro .dado .info2 {
+  margin-right: 12px;
+}
+.center .quadro .dado .info2 p {
+  text-align: end;
+  font-size: 0.7rem;
+}
+.center .quadro .dado .info2 h2 {
+  font-size: 0.9rem;
+}
+.center .quadro .conteudo {
+  position: relative;
+  top: 60px;
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  height: 150px;
+}
+.center .quadro .conteudo .quadro1 {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.6rem;
+  padding: 12px 0px;
+  margin-left: 12px;
+  margin-right: 12px;
+  border-bottom: 1px solid hsla(0, 0%, 50%, 0.2);
+}
+.center .quadro .conteudo .quadro1 .vis p {
+  padding: 0px 10px;
+  margin-right: 20px;
+}
+.center .quadro .conteudo .quadro1 .vis::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 128px;
+  width: 12px;
+  height: 2.5px;
+  border-radius: 5px;
+  background-color: hsl(0, 100%, 73%);
+}
+.center .quadro .conteudo .quadro1 .aqu p {
+  padding-left: 10px;
+}
+.center .quadro .conteudo .quadro1 .aqu::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 63px;
+  width: 12px;
+  height: 2.5px;
+  border-radius: 5px;
+  background-color: hsl(229, 100%, 68%);
+}
+.center .quadro .conteudo .quadro2 {
+  width: 256px;
+  height: 38px;
+  margin-left: 12px;
+  margin-right: 12px;
+  border-bottom: 1px solid hsla(0, 0%, 50%, 0.2);
+  /* ALERTA DE GAMBIARRA */
+  /*
+  .valorV {
+    display: none;
+    width: max-content;
+    position: relative;
+    right: 10px;
+    bottom: 25px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 70% 85%, 50% 100%, 30% 85%, 0 85%);
+
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 700;
+
+    padding: 0.3rem;
+    padding-bottom: 0.6rem;
+    background-color: hsla(0, 100%, 73%, 1);
+  }
+  */
+}
+.center .quadro .conteudo .quadro2 .ponto1, .center .quadro .conteudo .quadro2 .ponto2, .center .quadro .conteudo .quadro2 .ponto3, .center .quadro .conteudo .quadro2 .ponto4, .center .quadro .conteudo .quadro2 .ponto5, .center .quadro .conteudo .quadro2 .ponto6, .center .quadro .conteudo .quadro2 .ponto7 {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  background-color: hsl(0, 100%, 73%);
+}
+.center .quadro .conteudo .quadro2 .ponto1 {
+  bottom: 64px;
+  right: 253px;
+}
+.center .quadro .conteudo .quadro2 .ponto1:hover .valorV {
+  display: block;
+  animation: entrar 500ms ease-in-out forwards;
+}
+.center .quadro .conteudo .quadro2 .ponto2 {
+  bottom: 98px;
+  right: 214px;
+}
+.center .quadro .conteudo .quadro2 .ponto2:hover .valorV {
+  display: block;
+  animation: entrar 500ms ease-in-out forwards;
+}
+.center .quadro .conteudo .quadro2 .ponto3 {
+  bottom: 87px;
+  right: 175px;
+}
+.center .quadro .conteudo .quadro2 .ponto3:hover .valorV {
+  display: block;
+  animation: entrar 500ms ease-in-out forwards;
+}
+.center .quadro .conteudo .quadro2 .ponto4 {
+  bottom: 99px;
+  right: 134.2px;
+}
+.center .quadro .conteudo .quadro2 .ponto4:hover .valorV {
+  display: block;
+  animation: entrar 500ms ease-in-out forwards;
+}
+.center .quadro .conteudo .quadro2 .ponto5 {
+  bottom: 73px;
+  right: 95.4px;
+}
+.center .quadro .conteudo .quadro2 .ponto5:hover .valorV {
+  display: block;
+  animation: entrar 500ms ease-in-out forwards;
+}
+.center .quadro .conteudo .quadro2 .ponto6 {
+  bottom: 62px;
+  right: 58px;
+}
+.center .quadro .conteudo .quadro2 .ponto6:hover .valorV {
+  display: block;
+  animation: entrar 500ms ease-in-out forwards;
+}
+.center .quadro .conteudo .quadro2 .ponto7 {
+  bottom: 90px;
+  right: 19px;
+}
+.center .quadro .conteudo .quadro2 .ponto7:hover .valorV {
+  display: block;
+  animation: entrar 500ms ease-in-out forwards;
+}
+.center .quadro .conteudo .quadro2 .valorV {
+  display: none;
+  width: -moz-max-content;
+  width: max-content;
+  position: relative;
+  right: 10px;
+  bottom: 25px;
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 0.3rem;
+  border-radius: 3px;
+  background-color: hsl(0, 100%, 73%);
+}
+.center .quadro .conteudo .quadro2 .valorV::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 10px;
+  width: 6px;
+  height: 6px;
+  transform: rotate(45deg);
+  background-color: hsl(0, 100%, 73%);
+}
+.center .quadro .conteudo .quadro3 {
+  width: 256px;
+  height: 38px;
+  margin-left: 12px;
+  margin-right: 12px;
+  border-bottom: 1px solid hsla(0, 0%, 50%, 0.2);
+  /*
+  .valorB {
+    display: none;
+    width: max-content;
+    position: relative;
+    right: 7px;
+    bottom: 25px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 70% 85%, 50% 100%, 30% 85%, 0 85%);
+
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 700;
+
+    padding: 0.3rem;
+    padding-bottom: 0.6rem;
+    background-color: rgba(92, 122, 255, 1);
+  }
+  */
+}
+.center .quadro .conteudo .quadro3 .ponto8, .center .quadro .conteudo .quadro3 .ponto9, .center .quadro .conteudo .quadro3 .ponto10, .center .quadro .conteudo .quadro3 .ponto11, .center .quadro .conteudo .quadro3 .ponto12, .center .quadro .conteudo .quadro3 .ponto13, .center .quadro .conteudo .quadro3 .ponto14 {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  background-color: hsl(229, 100%, 68%);
+}
+.center .quadro .conteudo .quadro3 .ponto8 {
+  bottom: 51px;
+  right: 253px;
+}
+.center .quadro .conteudo .quadro3 .ponto8:hover .valorB {
+  display: block;
+  animation: entrar 500ms ease-in-out forwards;
+}
+.center .quadro .conteudo .quadro3 .ponto9 {
+  bottom: 61px;
+  right: 214px;
+}
+.center .quadro .conteudo .quadro3 .ponto9:hover .valorB {
+  display: block;
+  animation: entrar 500ms ease-in-out forwards;
+}
+.center .quadro .conteudo .quadro3 .ponto10 {
+  bottom: 48px;
+  right: 175px;
+}
+.center .quadro .conteudo .quadro3 .ponto10:hover .valorB {
+  display: block;
+  animation: entrar 500ms ease-in-out forwards;
+}
+.center .quadro .conteudo .quadro3 .ponto11 {
+  bottom: 55px;
+  right: 134.2px;
+}
+.center .quadro .conteudo .quadro3 .ponto11:hover .valorB {
+  display: block;
+  animation: entrar 500ms ease-in-out forwards;
+}
+.center .quadro .conteudo .quadro3 .ponto12 {
+  bottom: 51px;
+  right: 95.4px;
+}
+.center .quadro .conteudo .quadro3 .ponto12:hover .valorB {
+  display: block;
+  animation: entrar 500ms ease-in-out forwards;
+}
+.center .quadro .conteudo .quadro3 .ponto13 {
+  bottom: 38px;
+  right: 58px;
+}
+.center .quadro .conteudo .quadro3 .ponto13:hover .valorB {
+  display: block;
+  animation: entrar 500ms ease-in-out forwards;
+}
+.center .quadro .conteudo .quadro3 .ponto14 {
+  bottom: 47px;
+  right: 19px;
+}
+.center .quadro .conteudo .quadro3 .ponto14:hover .valorB {
+  display: block;
+  animation: entrar 500ms ease-in-out forwards;
+}
+.center .quadro .conteudo .quadro3 .valorB {
+  display: none;
+  width: -moz-max-content;
+  width: max-content;
+  position: relative;
+  right: 7px;
+  bottom: 25px;
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 0.3rem;
+  border-radius: 3px;
+  background-color: hsl(229, 100%, 68%);
+}
+.center .quadro .conteudo .quadro3 .valorB::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 7.2px;
+  width: 6px;
+  height: 6px;
+  transform: rotate(45deg);
+  background-color: hsl(229, 100%, 68%);
+}
+.center .quadro .conteudo #ponto {
+  cursor: pointer;
+}
+.center .quadro .conteudo .mes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 6px;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+.center .quadro .conteudo .mes p {
+  font-size: 0.6rem;
+  color: grey;
+}
+
+@keyframes entrar {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-5px);
+  }
+}/*# sourceMappingURL=style.css.map */

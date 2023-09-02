@@ -1,0 +1,73 @@
+@import './default';
+
+.frame {
+  @include frame (linear-gradient(45deg, #3FAF82, #59e29b));
+}
+
+.center {
+  @include center;
+
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s linear;
+
+    &:hover {
+      cursor: pointer;
+
+      span{
+        &:first-child {
+          animation: down 1s ease-in-out;
+          transform: translate3d(0, 24px, 0) rotate(45deg);
+        }
+        &:last-child {  
+          animation: up 1s ease-in-out;
+          transform: translate3d(0, -24px, 0) rotate(-45deg);
+
+        }
+        &:nth-child(2) {
+          transform: scale(0);
+          opacity: 0;
+        }
+      }
+
+      @keyframes down {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(25px);
+        }
+        100% {
+          transform: translate3d(0, 24px, 0) rotate(45deg);
+        }
+      }
+
+      @keyframes up {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-25px);
+        }
+        100% {
+          transform: translate3d(0, -24px, 0) rotate(-45deg);
+        }
+      }
+    }
+
+    span {
+      height: 10px;
+      width: 100px;
+      margin: 7px auto;
+
+      border-radius: 15px;
+      background-color: #fff;
+      box-shadow: 0 0 13px hsla(0, 0%, 0%, 0.4);
+      transition: transform 0.5s ease-in-out;
+    }
+  }
+}
+

@@ -1,0 +1,440 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+@import './default';
+
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.frame {
+  @include frame (linear-gradient(0deg, hsl(167, 49%, 45%), hsl(174, 71%, 46%)));
+}
+
+.center {
+  @include center;
+
+  .quadro {
+    position: relative;
+
+    width: 280px;
+    height: 210px;
+
+    border-radius: 3px;
+    background-color: #f6f6f6;
+    box-shadow: 10px 15px 15px 0 rgba(0,0,0,0.2);
+    overflow: hidden;
+
+    .dado {
+      position: absolute;
+      top: 0;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      width: 280px;
+      height: 60px;
+
+      background-color: hsl(39, 73%, 66%);
+
+      .info1, .info2 {
+        color: #fff;
+      }
+      .info1 {
+        margin-left: 12px;
+
+        h1 {
+          font-size: 0.9rem;
+        }
+
+        p {
+          font-size: 0.7rem;
+        }
+      }
+      .info2 {
+        margin-right: 12px;
+
+        p {
+          text-align: end;
+          font-size: 0.7rem;
+        }
+
+        h2 {
+          font-size: 0.9rem;
+        }
+      }
+
+    }
+
+    .conteudo {
+      position: relative;
+      top: 60px;
+
+      display: flex;
+      flex-direction: column;
+
+      width: 280px;
+      height: calc(210px - 60px);
+
+      .quadro1 {
+        display: flex;
+        justify-content: flex-end;
+
+        font-size: 0.6rem;
+
+        padding: 12px 0px;
+        margin-left: 12px;
+        margin-right: 12px;
+
+        border-bottom: 1px solid hsla(0, 0%, 50%, 0.2);
+  
+        .vis {
+          p {
+            padding: 0px 10px;
+            margin-right: 20px;
+          }
+        }
+        .vis::before {
+          content: '';
+          position: absolute;
+          top: 20px;
+          right: 128px;
+
+          width: 12px;
+          height: 2.5px;
+
+          border-radius: 5px;
+          background-color: hsl(0, 100%, 73%);
+        }
+        .aqu {
+          p {
+            padding-left: 10px;
+          }
+        }
+        .aqu::before {
+          content: '';
+          position: absolute;
+          top: 20px;
+          right: 63px;
+
+          width: 12px;
+          height: 2.5px;
+          
+          border-radius: 5px;
+          background-color: hsl(229, 100%, 68%);
+        }
+      }
+
+      .quadro2 {
+        width: 256px;
+        height: 38px;
+
+        margin-left: 12px;
+        margin-right: 12px;
+
+        border-bottom: 1px solid hsla(0, 0%, 50%, 0.2);
+
+        .ponto1, .ponto2, .ponto3, .ponto4, .ponto5, .ponto6, .ponto7 {
+          position: absolute;
+
+          width: 6px;
+          height: 6px;
+
+          border-radius: 100%;
+          background-color: hsl(0, 100%, 73%);
+        }
+        /* ALERTA DE GAMBIARRA */
+        .ponto1 {
+          bottom: 64px;
+          right: 253px;
+        }
+        .ponto1:hover {
+          .valorV {
+            display: block;
+            animation: entrar 500ms ease-in-out forwards;
+          }
+        }
+        .ponto2 {
+          bottom: 98px;
+          right: calc(253px - 39px);
+        }
+        .ponto2:hover {
+          .valorV {
+            display: block;
+            animation: entrar 500ms ease-in-out forwards;
+          }
+        }
+        .ponto3 {
+          bottom: 87px;
+          right: calc(253px - (2*39px));
+        }
+        .ponto3:hover {
+          .valorV {
+            display: block;
+            animation: entrar 500ms ease-in-out forwards;
+          }
+        }
+        .ponto4 {
+          bottom: 99px;
+          right: calc(253px - (3*39.6px));
+        }
+        .ponto4:hover {
+          .valorV {
+            display: block;
+            animation: entrar 500ms ease-in-out forwards;
+          }
+        }
+        .ponto5 {
+          bottom: 73px;
+          right: calc(253px - (4*39.4px));
+        }
+        .ponto5:hover {
+          .valorV {
+            display: block;
+            animation: entrar 500ms ease-in-out forwards;
+          }
+        }
+        .ponto6 {
+          bottom: 62px;
+          right: calc(253px - (5*39px));
+        }
+        .ponto6:hover {
+          .valorV {
+            display: block;
+            animation: entrar 500ms ease-in-out forwards;
+          }
+        }
+        .ponto7 {
+          bottom: 90px;
+          right: calc(253px - (6*39px));
+        }
+        .ponto7:hover {
+          .valorV {
+            display: block;
+            animation: entrar 500ms ease-in-out forwards;
+          }
+        }
+
+        .valorV {
+          display: none;
+          width: max-content;
+          position: relative;
+          right: 10px;
+          bottom: 25px;
+
+          color: #fff;
+          font-size: 0.6rem;
+          font-weight: 700;
+
+          padding: 0.3rem;
+          border-radius: 3px;
+          background-color: hsla(0, 100%, 73%, 1);
+        }
+
+        .valorV::after {
+          content: '';
+          position: absolute;
+          bottom: -3px;
+          left: 10px;
+
+          width: 6px;
+          height: 6px;
+          
+          transform: rotate(45deg);
+          background-color: hsla(0, 100%, 73%, 1);
+        }
+
+        /*
+        .valorV {
+          display: none;
+          width: max-content;
+          position: relative;
+          right: 10px;
+          bottom: 25px;
+          clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 70% 85%, 50% 100%, 30% 85%, 0 85%);
+
+          color: #fff;
+          font-size: 0.6rem;
+          font-weight: 700;
+
+          padding: 0.3rem;
+          padding-bottom: 0.6rem;
+          background-color: hsla(0, 100%, 73%, 1);
+        }
+        */
+      }
+
+      .quadro3 {
+
+        width: 256px;
+        height: 38px;
+
+        margin-left: 12px;
+        margin-right: 12px;
+
+        border-bottom: 1px solid hsla(0, 0%, 50%, 0.2);
+
+        .ponto8, .ponto9, .ponto10, .ponto11, .ponto12, .ponto13, .ponto14 {
+          position: absolute;
+
+          width: 6px;
+          height: 6px;
+
+          border-radius: 100%;
+          background-color: hsl(229, 100%, 68%);
+        }
+
+        .ponto8 {
+          bottom: 51px;
+          right: 253px;
+        }
+        .ponto8:hover {
+          .valorB {
+            display: block;
+            animation: entrar 500ms ease-in-out forwards;
+          }
+        }
+        .ponto9 {
+          bottom: 61px;
+          right: calc(253px - 39px);
+        }
+        .ponto9:hover {
+          .valorB {
+            display: block;
+            animation: entrar 500ms ease-in-out forwards;
+          }
+        }
+        .ponto10 {
+          bottom: 48px;
+          right: calc(253px - (2*39px));
+        }
+        .ponto10:hover {
+          .valorB {
+            display: block;
+            animation: entrar 500ms ease-in-out forwards;
+          }
+        }
+        .ponto11 {
+          bottom: 55px;
+          right: calc(253px - (3*39.6px));
+        }
+        .ponto11:hover {
+          .valorB {
+            display: block;
+            animation: entrar 500ms ease-in-out forwards;
+          }
+        }
+        .ponto12 {
+          bottom: 51px;
+          right: calc(253px - (4*39.4px));
+        }
+        .ponto12:hover {
+          .valorB {
+            display: block;
+            animation: entrar 500ms ease-in-out forwards;
+          }
+        }
+        .ponto13 {
+          bottom: 38px;
+          right: calc(253px - (5*39px));
+        }
+        .ponto13:hover {
+          .valorB {
+            display: block;
+            animation: entrar 500ms ease-in-out forwards;
+          }
+        }
+        .ponto14 {
+          bottom: 47px;
+          right: calc(253px - (6*39px));
+        }
+        .ponto14:hover {
+          .valorB {
+            display: block;
+            animation: entrar 500ms ease-in-out forwards;
+          }
+        }
+
+        .valorB {
+          display: none;
+          width: max-content;
+          position: relative;
+          right: 7px;
+          bottom: 25px;
+
+          color: #fff;
+          font-size: 0.6rem;
+          font-weight: 700;
+
+          padding: 0.3rem;
+          border-radius: 3px;
+          background-color: hsl(229, 100%, 68%);
+        }
+
+        .valorB::after {
+          content: '';
+          position: absolute;
+          bottom: -3px;
+          left: 7.2px;
+
+          width: 6px;
+          height: 6px;
+          
+          transform: rotate(45deg);
+          background-color: hsl(229, 100%, 68%);
+        }
+
+        /*
+        .valorB {
+          display: none;
+          width: max-content;
+          position: relative;
+          right: 7px;
+          bottom: 25px;
+          clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 70% 85%, 50% 100%, 30% 85%, 0 85%);
+
+          color: #fff;
+          font-size: 0.6rem;
+          font-weight: 700;
+
+          padding: 0.3rem;
+          padding-bottom: 0.6rem;
+          background-color: rgba(92, 122, 255, 1);
+        }
+        */
+      }
+
+      #ponto {
+        cursor: pointer;
+      }
+
+      .mes {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding-top: 6px;
+        margin-left: 12px;
+        margin-right: 12px;
+
+        p {
+          font-size: 0.6rem;
+          color: grey;
+        }
+      }
+    }
+  }
+}
+
+@keyframes entrar {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-5px);
+  }
+}
