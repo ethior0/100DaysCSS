@@ -1,0 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+@import './default';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 100%;
+}
+
+.frame {
+  @include frame(hsl(215, 28%, 27%));
+}
+
+.center {
+  @include center;
+
+  .janela2 {
+    display: none;
+  }
+}
