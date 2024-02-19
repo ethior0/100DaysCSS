@@ -1,0 +1,357 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400);
+
+:root {
+  --cor-pingo: rgb(142, 221, 255);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: #fff;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+  .center {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+
+    display: flex;
+    flex-direction: column;
+
+    transform: translate(-50%,-50%);
+
+    .cena {
+      height: calc(100% - 50px);
+      // 28 31 48
+      background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgb(51, 57, 93) 100%);
+
+      .lua {
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        top: 40px;
+        left: 55px;
+
+        overflow: hidden;
+        border-radius: 50%;
+        background-color: #fdf8c2;
+        box-shadow:  0px 0px 15px #f1eba9;
+
+        animation: luaSubindo 1s ease-out forwards;
+
+        .cratera01 {
+          position: absolute;
+          width: 15px;
+          height: 15px;
+          top: 10px;
+          left: 0px;
+
+          border-radius: 10px;
+          background-color: #f1eba9;
+        }
+
+        .cratera02 {
+          @extend .cratera01;
+          width: 5px;
+          height: 5px;
+          top: 25px;
+          left: 15px;
+        }
+        
+        .cratera03 {
+          @extend .cratera01;
+          width: 12px;
+          height: 12px;
+          top: 5px;
+          left: 32px
+        }
+
+        .cratera04 {
+          @extend .cratera01;
+          width: 7px;
+          height: 7px;
+          top: 18px;
+          left: 46px
+        }
+
+        .cratera05 {
+          @extend .cratera01;
+          width: 6px;
+          height: 6px;
+          top: 40px;
+          left: 20px;
+        }
+
+        .cratera06 {
+          @extend .cratera01;
+          width: 9px;
+          height: 9px;
+          top: 30px;
+          left: 30px;
+        }
+
+        .cratera07 {
+          @extend .cratera01;
+          width: 3px;
+          height: 3px;
+          top: 45px;
+          left: 45px;
+        }
+
+        .cratera08 {
+          @extend .cratera01;
+          width: 7px;
+          height: 7px;
+          top: 40px;
+          left: 55px;
+        }
+
+        .cratera09 {
+          @extend .cratera08;
+          top: 20px;
+          left: 60px;
+        }
+
+        .cratera10 {
+          @extend .cratera01;
+          width: 12px;
+          height: 12px;
+          top: 54px;
+          left: 8px;
+        }
+
+        .cratera11 {
+          @extend .cratera10;
+          width: 6px;
+          height: 6px;
+          top: 60px;
+          left: 35px;
+        }
+      }
+
+      .montanha01,
+      .montanha02,
+      .montanha03 {
+        z-index: 2;
+        position: absolute;
+        top: 230px;
+        background-color: rgb(59, 65, 98);
+        border-radius: 100%;
+      }
+      .montanha01 {
+        width: 360px;
+        height: 350px;
+        left: 50px;
+        top: 215px;
+      }
+      .montanha02 {
+        width: 300px;
+        height: 200px;
+        left: -140px;
+        top: 250px;
+      }
+      .montanha03 {
+        width: 200px;
+        height: 200px;
+        left: 80%;
+        top: 245px;
+      }
+
+      .montanha-atras01,
+      .montanha-atras02 {
+        z-index: 1;
+        position: absolute;
+        top: 200px;
+        // 45 51 81
+        background: rgb(45, 51, 81);
+        border-radius: 100%;
+      }
+
+      .montanha-atras01 {
+        width: 290px;
+        height: 200px;
+        left: -45px;
+        top: 205px;
+      }
+
+      .montanha-atras02 {
+        width: 320px;
+        height: 200px;
+        left: 200px;
+      }
+
+      @for $i from 1 through 10 {
+        .gota-grande#{$i} {
+          z-index: 5;
+          position: absolute;
+          width: 10px;
+          height: 10px;
+
+          top: 292px;
+          left: (35 * $i) + px; 
+
+          border-radius: 5px 5px 5px 5px;
+          background-color: var(--cor-pingo);
+          animation: gotaCaindo (0.9 + random(4) / 10) + s ease-in (1 + random(9) / 10) + s infinite; // 3 ou 4 - linear ou ease-in
+          transform: translate3d(15px, -310px, 0px);
+        }
+        
+        .gota-grande#{$i}::after {
+          content: '';
+          position: absolute;
+          width: 12px;
+          height: 10px;
+          top: -6px;
+          left: -1px;
+
+          clip-path: polygon(50% 0%, 9% 100%, 91% 100%);
+          background-color: var(--cor-pingo);
+        }
+      }
+
+      @for $j from 1 through 10 {
+        .gota-media#{$j} {
+          z-index: 4;
+          position: absolute;
+          width: 6px;
+          height: 6px;
+
+          top: 294px;
+          left: (40 * $j) + px; 
+
+          opacity: 0.6;
+          border-radius: 5px 5px 5px 5px;
+          background-color: var(--cor-pingo);
+          animation: gotaCaindo (1.2 + random(5) / 10) + s ease-in (1 + random(9) / 10) + s infinite; // 3 ou 4 - linear ou ease-in
+          transform: translate3d(15px, -310px, 0px);
+        }
+
+        .gota-media#{$j}::after {
+          content: '';
+          position: absolute;
+          width: 8px;
+          height: 6px;
+          top: -3.8px;
+          left: -0.9px;
+
+          clip-path: polygon(50% 0%, 13% 100%, 87% 100%);
+          background-color: var(--cor-pingo);
+        }
+      }
+
+      @for $k from 1 through 10 {
+        .gota-pequena#{$k} {
+          z-index: 3;
+          position: absolute;
+          width: 4px;
+          height: 4px;
+
+          top: 295px;
+          left: (45 * $k) + px; 
+
+          opacity: 0.4;
+          border-radius: 5px 5px 5px 5px;
+          background-color: var(--cor-pingo);
+          animation: gotaCaindo (2.9 + random(2) / 10) + s ease-in (1 + random(9) / 10) + s infinite; // 3 ou 4 - linear ou ease-in
+          transform: translate3d(15px, -310px, 0px);
+        }
+
+        .gota-pequena#{$k}::after {
+          content: '';
+          position: absolute;
+          width: 6px;
+          height: 4px;
+          top: -2px;
+          left: -0.9px;
+
+          clip-path: polygon(50% 0%, 14% 100%, 86% 100%);
+          background-color: var(--cor-pingo);
+        }
+      }
+    }
+
+    .cena-menu {
+      z-index: 999;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 1.125rem 1.5rem;
+      background-color: #ffffff;
+      overflow: hidden;
+      list-style: none;
+
+      .temperatura {
+        height: max-content;
+        font-weight: 300;
+        font-size: 2.875rem;
+      }
+
+      .info01 {
+        font-weight: 300;
+        font-size: 0.938rem;
+        margin-right: 3.25rem;
+      }
+
+      .info02 {
+        font-weight: 300;
+        font-size: 0.938rem;
+        text-align: right;
+
+        span {
+          font-weight: 400;
+          margin-left: 0.5rem;
+          color: rgb(0, 0, 0);
+        }
+
+        .span-terca {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@keyframes luaSubindo {
+  0% {                   /* X     Y*/
+    transform: translate(-20px, 200px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes gotaCaindo {
+  0% {
+    transform: translate3d(20px, -310px, 0px) rotate(16deg) scale(1, 1);
+  }
+
+  85% {
+    transform: translate3d(0px, 11px, 0px) rotate(16deg) scale(1, 1);
+  }
+
+  100% {
+    transform: translate3d(0px, 11px, 0px) rotate(0deg) scale(3, 0);
+  }
+}
