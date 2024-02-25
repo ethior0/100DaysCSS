@@ -1,0 +1,175 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,400);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 100% ;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: #575757;
+  color: #ffffff;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  
+  .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    .relogio {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 210px;
+      height: 210px;
+
+      overflow: hidden;
+      background-color: #151515; 
+      box-shadow: 0px 0px 0px 8px #292929;
+      border-radius: 50%;
+
+      .spinner {
+        position: absolute;
+        z-index: 2;
+        width: 202px;
+        height: 202px;
+
+        border-radius: 50%;
+
+        circle {
+          fill: none;
+          stroke: #ff4949;
+          stroke-width: 3;
+          stroke-dasharray: 625;
+
+          animation: animacaoSpinner 5s linear infinite;
+          transform-origin: center center;
+        }
+      }
+
+      .container-info {
+        z-index: 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        width: 190px;
+        height: 190px;
+
+        background-color: #151515; 
+        box-shadow: 0px 0px 0px 4px #151515;
+        border-radius: 50%;
+        border: 5px dotted grey;
+
+        span {
+          color: #f5f5f5;
+          font-size: 0.813rem;
+        }
+
+        h1 {
+          line-height: 1;
+          font-size: 2.688rem;
+        }
+
+        .coracao {
+          display: flex;
+          align-items: center;
+          color: #f5f5f5;
+          font-size: 0.813rem;
+
+          .coracao-icone {
+            position: relative;
+            width: 12px;
+            height: 12px;
+            transform: scale(0.95);
+            animation: coracaoPulsando 0.3s ease alternate-reverse infinite;
+          }
+
+          .coracao-icone::after {
+            content: '';
+            position: absolute;
+            width: 5px;
+            height: 9px;
+            top: 1px;
+            right: 5px;
+
+            background-color: #ff4949;
+            border-radius: 1rem 1rem 0rem 0rem;
+            transform: rotate(-45deg);
+          }
+
+          .coracao-icone::before {
+            content: '';
+            position: absolute;
+            width: 5px;
+            height: 9px;
+            top: 1px;
+            left: 5px;
+
+            background-color: #ff4949;
+            border-radius: 1rem 1rem 0rem 0rem;
+            transform: rotate(45deg);
+          }
+
+          .paragrafo-primeiro {
+            margin-left: 2px;
+            margin-right: 14px;
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+@keyframes coracaoPulsando {
+  0% {
+    transform: scale(0.95);
+  }
+
+  100% {  
+    transform: scale(1.1);
+  }
+}
+
+@keyframes animacaoSpinner {
+  from{
+    stroke-dashoffset: 625;
+    transform: rotate(-90deg) scaleY(1);
+  }
+
+  50%{
+    stroke-dashoffset: 0;
+    transform: rotate(-90deg) scaleY(1);
+  }
+
+  50.001%{
+    transform: rotate(-90deg) scaleY(-1);
+  }
+
+  to{
+    stroke-dashoffset: 625;
+    transform: rotate(-90deg) scaleY(-1);       
+  }
+}
